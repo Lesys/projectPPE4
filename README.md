@@ -9,7 +9,7 @@ Une solution est de créer une application mobile permettant de mieux organiser 
 
 Schéma :
 
-[](url)
+[schemaPPE4](schemaPPE4.png)
 
 Liste fonctionnelle :
 
