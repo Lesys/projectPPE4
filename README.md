@@ -11,6 +11,8 @@ Schéma :
 
 [](url)
 
+Liste fonctionnelle :
+
 - Une DataBase (MySQL) <= sur machine virtuelle
 - Un Middleware (Json) qui va récupérer les données de la DataBase puis les présenter pour un affichage sur un support Android.
 - Une application GUI (Support Android)
