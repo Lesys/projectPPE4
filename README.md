@@ -1,11 +1,10 @@
-projectPPE4
-===========
+# projectPPE4
 
 Contexte
 --------
 
-Une entreprise a un problème d’organisation à cause des multiples réunion qui s’enchevêtrent sur l’emploi du temps.
-Une solution est de créer une application mobile permettant de mieux organiser les évènements à venir.
+L'entreprise "BatDesL" a un problème d’organisation à cause des multiples réunion qui s’enchevêtrent sur l’emploi du temps.
+Notre solution est de réorganiser cet emploi du temps et de créer une application mobile permettant d'afficher celui-ci.
 
 Schéma :
 
@@ -16,6 +15,7 @@ Liste fonctionnelle :
 - Une DataBase (MySQL) sur le serveur du lycée André Malraux
 - Un Middleware (traite les données et renvoie un json) qui va récupérer les données de la DataBase puis les présenter pour un affichage sur un support Android.
 - Une application GUI (Support Android)
+  - Affiche l'heure et la date du jour sur une page d'accueil
   - Affiche l’emploi du temps commun (depuis la BDD)
   - Possibilité de créer des rendez-vous personnalisés
 
