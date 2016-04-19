@@ -3,12 +3,14 @@
 Contexte
 --------
 
-L'entreprise "BatDesL" a un problème d’organisation à cause des multiples réunion qui s’enchevêtrent sur l’emploi du temps.
+L'entreprise "BatDesL" a un
 Notre solution est de réorganiser cet emploi du temps et de créer une application mobile permettant d'afficher celui-ci.
 
-Schéma :
+Problématique
+-------------
 
-![schemaPPE4](schemaPPE4.png)
+Besoins
+-------
 
 Liste fonctionnelle :
 
@@ -19,19 +21,12 @@ Liste fonctionnelle :
   - Affiche l’emploi du temps commun (depuis la BDD)
   - Possibilité de créer des rendez-vous personnalisés
 
-DataBase :
-Synthaxe pour le schéma relationnel :
+Schéma :
 
-- nom_table(parametre_1, parametre_2.... parametre_X);
+![schemaPPE4](schemaPPE4.png)
 
-		parametre_1(type[, AUTO_INCREMENT]): Description du paramètre (Clé primaire, Clé étrangère (avec référence)...)
-		parametre_2(type): La même chose....
+Solution(s)
+--------
 
-Schéma relationnel :
-
-- reunion(id_reunion, date_reunion, intitule_reunion, descriptif_reunion);
-
-		id_reunion(int, AUTO_INCREMENT): Clé primaire de la table "reunion"
-		date_reunion(datetime): La date et l'heure à laquelle la réunion a lieu
-		intitule_reunion(: Titre (ou sujet principal) de la réunion (ex: "Réunion sur les comptes et le budget de l'entreprise")
-		descriptif_reunion(text): Informations complémentaires concernant la réunion
+Critiques
+---------
