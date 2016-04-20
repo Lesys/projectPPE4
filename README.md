@@ -3,7 +3,7 @@
 Contexte
 --------
 
-Cette mission est dédié au le pôle développement du service informatique de l'entreprise "BatDesL".
+Cette mission est dédiée au pôle développement du service informatique de l'entreprise "BatDesL".
 
 Problématique
 -------------
