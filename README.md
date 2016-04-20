@@ -3,11 +3,12 @@
 Contexte
 --------
 
-L'entreprise "BatDesL" a un
-Notre solution est de réorganiser cet emploi du temps et de créer une application mobile permettant d'afficher celui-ci.
+Cette mission est dédié au le pôle développement du service informatique de l'entreprise "BatDesL".
 
 Problématique
 -------------
+
+Le problème est la gestion de l’organisation du service informatique à cause des multiples réunions qui s’enchevêtrent sur l’emploi du temps. Notre équipe a trop de réunions, donc l'emploi du temps "commun" se trouve trop chargé.
 
 Besoins
 -------
@@ -28,6 +29,7 @@ Schéma :
 Solution(s)
 --------
 
+Notre solution est de réorganiser cet emploi du temps et de créer une application mobile permettant d'afficher celui-ci, grâce à une base de données qui répertorie toutes les réunions.
+
 Critiques
 ---------
-
