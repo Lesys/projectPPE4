@@ -7,7 +7,7 @@
 	
 	<div class="title1">Calendar Project - Bidault Bastien / Widmer Alexis</div>
 
-	<div class="allReunions">All reunions:<pre>
+	<div class="allReunions">All reunions:<p>
 
 	<?php 
 		foreach ($reunions as $reunion) {
@@ -17,4 +17,6 @@
 
 	?>
 
-<?php include "view/footer.html"; ?>
+<?php 
+include "view/reunion.php";
+include "view/footer.html"; ?>
