@@ -24,7 +24,7 @@ Liste fonctionnelle :
 
 Schéma :
 
-![schemaPPE4](schemaPPE4.png)
+![schemaPPE4](img/schemaPPE4.png)
 
 Solution(s)
 --------
