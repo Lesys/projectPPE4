@@ -7,4 +7,5 @@ CREATE TABLE reunion(
 	PRIMARY KEY(id_reunion));
 
 
-INSERT INTO reunion VALUES (1, "1996-12-12 16:00:00", "01:00:00", "La réunion est un test ahahahha", "Le descriptif ici !!");
+INSERT INTO reunion VALUES (1, "1996-12-12 16:00:00", "01:00:00", "La réunion est un test ahahahha", "Le descriptif ici !!"),
+(2, "2016-04-26 16:05:00", "00:15:00", "La réunion aura une durée de 15 minutes", "Nous ferons du traitement de texte, des réunions plus approfondies seront données pour la semaine prochaine.");
