@@ -12,7 +12,8 @@ function connectionDB() {
     return $connection;
 }
 
-function queryDBSmartphone() {
+function queryDB() {
+	$co = connectionDB();
 	$request = "SELECT * FROM reunion ORDER BY date_reunion;"; //Query for the SQL query
     
     $resultat = $co->query($request); //All fetchs in the $resultat variable
@@ -27,6 +28,6 @@ function queryDBSmartphone() {
 
     $resultat->closeCursor();
 
-    return $
+    return json_encode($return);
 }
 ?>
