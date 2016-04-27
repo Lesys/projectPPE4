@@ -1,3 +1,15 @@
+/* ---------------------------------PERSO--------------------------- */
+
+table {
+	border-collapse: collapse;
+	margin-right: auto;
+	margin-left: auto;
+}
+td, th {
+	font-size: 20px;
+	border: 1px solid black;
+	text-align: center;
+}
 .title1 {
 	color: #FF0000;
 	text-align: center;
