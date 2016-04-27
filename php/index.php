@@ -19,6 +19,8 @@
 		case "reunion": $reunion = queryAloneDB($_REQUEST['id']);
 			include "view/reunion.php";
 			break;
+		case "create": include "view/create.php";
+			break;
 	}
 
 	?>

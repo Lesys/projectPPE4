@@ -53,8 +53,32 @@ function showReunion($var) {
         else {
             echo $var;
         }
-        
+
     echo "</td>";
 }
 
+function createNewField() {
+    $date = checkNullOrNot($_POST["datePost"]);
+    $duree = checkNullOrNot($_POST["dureePost"]);
+    $intitule = checkNullOrNot($_POST["intitulePost"]);
+    $descriptif = checkNullOrNot($_POST["descriptifPost"]);
+    $salle = checkNullOrNot($_POST["sallePost"]);
+
+    $request = "INSERT INTO reunion (date_reunion, duree_estimee_reunion, intitule_reunion, descriptif_reunion, salle_reunion) VALUES (".$date.", ".$duree.", ".$intitule.", ".$descriptif.", ".$salle.");";
+
+    $co = connectionDB();
+
+    if ($co->query($request) === FALSE) {
+        echo "Error: ".$request."<br>".$co->error;
+    }
+}
+
+function checkNullOrNot($var) {
+    if ($var != null)
+        $return = "\"".$var."\"";
+    else
+        $return = null;
+
+    return $return;
+}
 ?>
