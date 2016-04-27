@@ -20,7 +20,7 @@ Liste fonctionnelle :
 - Une interface PHP pour navigateur
   - Affiche l'heure et la date du jour sur une page d'accueil
   - Affiche l’emploi du temps commun (depuis la BDD)
-  - Possibilité de créer des rendez-vous personnalisés
+  - Possibilité de créer des rendez-vous personnalisés et de les enregistrer
 
 Schéma :
 
