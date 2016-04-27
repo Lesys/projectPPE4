@@ -29,3 +29,5 @@ echo $date;
     ?>
   </tbody>
 </table>
+<br>
+<a href="index.php?action=create"><input type="button" value="Creer"></input></a>
