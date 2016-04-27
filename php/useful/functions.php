@@ -54,6 +54,7 @@ function showReunion($var) {
             echo $var;
         }
 
+
     echo "</td>";
 }
 
