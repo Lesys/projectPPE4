@@ -1,16 +1,35 @@
 <div class="allReunions">
 
-<?php
 
-	include "headOfPage.php";
-	echo "All reunions:<br>";
+    <table class="affTab">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Duree</th>
+                <th>Intitule</th>
+                <th>Salle</th>
+                <th>Lien Reunion</th>
+            </tr>
+        </thead>
+        <tbody>
+    <?php
+        foreach ($reunions as $reunion) {
+            echo "<tr>";
+                showReunion($reunion[date_reunion]);
+                showReunion($reunion[duree_estimee_reunion]);
+                showReunion($reunion[intitule_reunion]);
+                showReunion($reunion[salle_reunion]);?>
+                <td><a href="index.php?action=reunion&id=<?php echo $reunion['id_reunion']; ?>">Look at reunion <?php echo $reunion['id_reunion']; ?></td>
+                <?php echo "</tr>";
+        }
+            ?>
 
-	foreach ($reunions as $reunion) { ?> 
-		<div class="reunionAlone">
-            <a href="index.php?action=reunion&id=<?php echo $reunion['id_reunion']; ?>">
-				<?php echo $reunion["date_reunion"]."<pre>Reunion for ".$reunion["intitule_reunion"].".Take ".$reunion["duree_estimee_reunion"]." at least for this time.</pre>";
-				?>
-			</a>
-		</div> <?php
-	}
-?>
+                <?php
+
+                    $date = date('m/d/Y h:i:s a', time());
+                    echo $date;
+                    ?>
+        </tbody>
+    </table>
+            
+</div>

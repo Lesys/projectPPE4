@@ -1,5 +1,5 @@
 <div id="reunionAlone"> 
-     <table>
+     <table class="affTab">
           <thead>
                <tr>
                     <th>ID Reunion</th>
@@ -19,6 +19,3 @@
           </tr>
      </table>
 </div><!-- /content -->
-<?php
-     include "vues/pied.html";
-?>

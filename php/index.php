@@ -1,4 +1,5 @@
 <?php include "view/header.html";
+	include "view/headOfPage.php";
 	include "useful/functions.php";
 
 	if(!isset($_REQUEST['action']))
@@ -20,8 +21,7 @@
 			break;
 	}
 
-
 	?>
 
-<?php 
-include "view/footer.html"; ?>
+
+<?php include "view/footer.html"; ?>

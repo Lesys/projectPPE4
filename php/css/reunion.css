@@ -5,13 +5,13 @@ table {
 	margin-right: auto;
 	margin-left: auto;
 }
-td, th {
-	font-size: 20px;
-	border: 1px solid black;
-	text-align: center;
-}
 .title1 {
 	color: #FF0000;
 	text-align: center;
 	font-size: 25px;
+}
+.affTab td, table, th, tr {
+	font-size: 10;
+	border: 0.5px;
+	border-style: solid;
 }
