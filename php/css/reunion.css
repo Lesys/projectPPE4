@@ -1,9 +1,16 @@
+/* ---------------------------------PERSO--------------------------- */
+
+table {
+	border-collapse: collapse;
+	margin-right: auto;
+	margin-left: auto;
+}
 .title1 {
 	color: #FF0000;
 	text-align: center;
 	font-size: 25px;
 }
-.affTab td, table, th {
+.affTab td, table, th, tr {
 	font-size: 10;
 	border: 0.5px;
 	border-style: solid;
