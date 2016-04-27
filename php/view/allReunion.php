@@ -15,10 +15,10 @@
     <?php
         foreach ($reunions as $reunion) {
             echo "<tr>";
-                showReunion($reunion[date_reunion]);
-                showReunion($reunion[duree_estimee_reunion]);
-                showReunion($reunion[intitule_reunion]);
-                showReunion($reunion[salle_reunion]);?>
+                showReunion($reunion["date_reunion"]);
+                showReunion($reunion["duree_estimee_reunion"]);
+                showReunion($reunion["intitule_reunion"]);
+                showReunion($reunion["salle_reunion"]);?>
                 <td><a href="index.php?action=reunion&id=<?php echo $reunion['id_reunion']; ?>">Look at reunion <?php echo $reunion['id_reunion']; ?></td>
                 <?php echo "</tr>";
         }
@@ -33,5 +33,5 @@
                     $date = date('m/d/Y h:i:s a', time());
                     echo $date;
                     ?>
-        
+
 </div>
