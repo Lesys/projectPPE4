@@ -84,6 +84,29 @@ function checkNullOrNot($var) {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function affDateTime() {
 
     // informations de date dans des variables
