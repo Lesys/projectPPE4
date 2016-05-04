@@ -1,3 +1,7 @@
 <div id="header">
-    <p align="center" class="title1">Calendar Project - Bidault Bastien / Widmer Alexis</p>
+    <a href="index.php"><input type="button" value="Home"></input></a>
+    <p class="title1">Calendar Project - Bidault Bastien / Widmer Alexis</p>
+
+    <?php affDateTime(); ?>
+
 </div>
