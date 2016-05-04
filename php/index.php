@@ -1,15 +1,15 @@
-<?php include "view/header.html";
+<?php include "useful/functions.php";
+	include "view/header.html";
 	include "view/headOfPage.php";
-	include "useful/functions.php";
 
 	if(!isset($_REQUEST['action']))
 	    $action = 'allReunion';
-	else 
+	else
 	    $action = $_REQUEST['action'];
 
 	if(!isset($_REQUEST['page']))
 	    $page = 1;
-	else 
+	else
 	    $page = $_REQUEST['page'];
 	switch($action)
 	{

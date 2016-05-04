@@ -36,7 +36,7 @@ function queryDB() {
 function queryAloneDB($id) {
     $co = connectionDB();
     $request = "SELECT * FROM reunion WHERE id_reunion = ".$id.";"; //Query for the SQL query
-    
+
     $resultat = $co->query($request); //All fetchs in the $resultat variable
     $row = $resultat->fetch();
 
@@ -114,4 +114,19 @@ function checkNullOrNot($var) {
 
     return $return;
 }
+
+function affDateTime() {
+
+    // informations de date dans des variables
+    $jour = date('d');
+    $mois = date('m');
+    $annee = date('Y');
+    $heure = date('H');
+    $minute = date('i');
+
+    // Affichage date et heure
+    echo '<p class="affDateTime">Bonjour ! Nous sommes le ' . $jour . '/' . $mois . '/' . $annee . ' et il est ' . $heure. ' h ' . $minute.'</p>';
+
+}
+
 ?>
