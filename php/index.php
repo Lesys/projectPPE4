@@ -21,6 +21,8 @@
 			break;
 		case "create": include "view/create.php";
 			break;
+		case "update": include "view/update.php";
+			break;
 	}
 
 	?>

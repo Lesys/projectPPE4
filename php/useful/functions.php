@@ -53,25 +53,57 @@ function showReunion($var) {
         else {
             echo $var;
         }
-
-
     echo "</td>";
 }
 
-function createNewField() {
+function createNewReunion() {
     $date = checkNullOrNot($_POST["datePost"]);
     $duree = checkNullOrNot($_POST["dureePost"]);
     $intitule = checkNullOrNot($_POST["intitulePost"]);
     $descriptif = checkNullOrNot($_POST["descriptifPost"]);
     $salle = checkNullOrNot($_POST["sallePost"]);
 
-    $request = "INSERT INTO reunion (date_reunion, duree_estimee_reunion, intitule_reunion, descriptif_reunion, salle_reunion) VALUES (".$date.", ".$duree.", ".$intitule.", ".$descriptif.", ".$salle.");";
+    $request = "INSERT INTO reunion (date_reunion, duree_estimee_reunion, intitule_reunion, descriptif_reunion, salle_reunion) VALUES (\"".$date."\", \"".$duree."\", \"".$intitule."\", \"".$descriptif."\", ".$salle.");";
 
     $co = connectionDB();
 
     if ($co->query($request) === FALSE) {
         echo "Error: ".$request."<br>".$co->error;
     }
+}
+
+function deleteReunion($id) {
+    $request = "DELETE * FROM reunion WHERE id_reunion = ".$id.";";
+
+    $co = connectionDB();
+
+    if ($co->query($request) === FALSE) {
+        echo "Error: ".$request."<br>".$co->error;
+    }
+}
+
+function updateReunion() {
+    //$request = "UPDATE reunion SET "
+}
+
+function takeAllSalle() {
+    $request = "SELECT * FROM salle;";
+
+    $co = connectionDB();
+
+    if ($co->query($request) === TRUE) {
+        $resultat = $co->query($request); //All fetchs in the $resultat variable
+
+        while ($row = $resultat->fetch()) { //For each row in the result of the query
+            $return[$row["id_salle"] - 1] = array(
+                "id_salle"=>$row["id_reunion"],
+                "num_salle"=>$row["num_salle"]);
+        }
+
+        $resultat->closeCursor();
+    }
+
+    return $return;
 }
 
 function checkNullOrNot($var) {

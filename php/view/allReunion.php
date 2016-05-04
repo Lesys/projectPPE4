@@ -23,15 +23,16 @@
                 <?php echo "</tr>";
         }
     ?>
-  </tbody>
-</table>
-<br>
-<a href="index.php?action=create"><input type="button" value="Creer"></input></a>
-
-                <?php
-
-                    $date = date('m/d/Y h:i:s a', time());
-                    echo $date;
-                    ?>
-
+        </tbody>
+    </table>
+    <br>
+    <div class="buttons">
+        <a href="index.php?action=create"><input type="button" value="Créer une réunion"></input></a>
+    </div>
+    <div class="todayDate">
+            <?php
+                $date = date('m/d/Y h:i:s a', time());
+                echo $date;
+                ?>
+    </div>
 </div>
