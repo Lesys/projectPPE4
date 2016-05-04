@@ -82,7 +82,7 @@ function deleteReunion($id) {
     }
 }
 
-function updateReunion() {
+function updateReunion() {
     //$request = "UPDATE reunion SET "
 }
 
