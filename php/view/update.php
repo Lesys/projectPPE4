@@ -39,7 +39,7 @@
           <br>
 
           <label for="sallePost">Salle :</label>
-               <select name="salle">
+               <select name="sallePost">
                <?php
                     foreach ($salles as $salle) { ?>
                          <option value="<?php echo $salle['id_salle']; ?>" <?php if ($reunion['salle_reunion'] == $salle['id_salle']) { ?>

@@ -87,12 +87,22 @@ function deleteReunion($id) {
 
 function updateReunion() {
     $id = $_GET['id'];
-    $date = checkNullOrNot($_POST["datePost"]);
-    $duree = checkNullOrNot($_POST["dureePost"].":00");
-    $intitule = checkNullOrNot($_POST["intitulePost"]);
-    $descriptif = checkNullOrNot($_POST["descriptifPost"]);
-    $salle = checkNullOrNot($_POST["sallePost"]);
-    $request = "UPDATE reunion SET date_reunion = ".$date.", duree_reunion = ".$duree.", intitule_reunion = ";
+    echo checkNullOrNot($_POST["datePost"], "char")."<br>";
+    echo checkNullOrNot($_POST["dureePost"].":00", "char")."<br>";
+    echo checkNullOrNot($_POST["intitulePost"], "char")."<br>";
+    echo checkNullOrNot($_POST["descriptifPost"], "char")."<br>";
+    echo checkNullOrNot($_POST["sallePost"], "num")."<br>";
+    $date = checkNullOrNot($_POST["datePost"], "char");
+    $duree = checkNullOrNot($_POST["dureePost"], "char");
+    $intitule = checkNullOrNot($_POST["intitulePost"], "char");
+    $descriptif = checkNullOrNot($_POST["descriptifPost"], "char");
+    $salle = checkNullOrNot($_POST["sallePost"], "num");
+
+    $request = "UPDATE reunion SET date_reunion = ".$date.", duree_estimee_reunion = ".$duree.", intitule_reunion = ".$intitule.", descriptif_reunion = ".$descriptif.", salle_reunion = ".$salle." WHERE id_reunion = ".$id.";";
+
+    $co = connectionDB();
+
+    return $co->query($request);
 }
 
 function takeAllSalle() {
