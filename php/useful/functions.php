@@ -78,7 +78,7 @@ function createNewReunion() {
 }
 
 function deleteReunion($id) {
-    $request = "DELETE * FROM reunion WHERE id_reunion = ".$id.";";
+    $request = "DELETE FROM reunion WHERE id_reunion = ".$id.";";
 
     $co = connectionDB();
 
