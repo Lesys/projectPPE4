@@ -33,18 +33,6 @@ function queryDB() {
     return $return;
 }
 
-function queryAloneDB($id) {
-    $co = connectionDB();
-    $request = "SELECT * FROM reunion WHERE id_reunion = ".$id.";"; //Query for the SQL query
-
-    $resultat = $co->query($request); //All fetchs in the $resultat variable
-    $row = $resultat->fetch();
-
-    $resultat->closeCursor();
-
-    return $row;
-}
-
 function showReunion($var) {
     echo "<td>";
         if ($var == null) {
@@ -94,7 +82,7 @@ function createNewReunion() {
 }
 
 function deleteReunion($id) {
-    $request = "DELETE * FROM reunion WHERE id_reunion = ".$id.";";
+    $request = "DELETE FROM reunion WHERE id_reunion = ".$id.";";
 
     $co = connectionDB();
 
@@ -108,11 +96,11 @@ function updateReunion() {
 }
 
 function takeAllSalle() {
-    $request = "SELECT * FROM salle;";
+    $request = "SELECT * FROM salle ORDER BY num_salle ASC;";
 
     $co = connectionDB();
 
-    if ($co->query($request) === TRUE) {
+    if ($co->query($request) == TRUE) {
         $resultat = $co->query($request); //All fetchs in the $resultat variable
 
         while ($row = $resultat->fetch()) { //For each row in the result of the query

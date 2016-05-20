@@ -29,7 +29,15 @@
 		<br>
 
 		<label for="sallePost">Salle : * </label>
-		<input type="text" name="sallePost" id="sallePost" required="" maxlength="4" required=""/>
+		<!--<input type="text" name="sallePost" id="sallePost" required="" maxlength="4" required=""/>-->
+
+
+		<select name="salle">
+            <?php
+                foreach ($salles as $salle) { ?>
+                    <option value="<?php echo $salle['id_salle']; ?>"><?php echo $salle['num_salle']; ?></option>
+          <?php } ?>
+		</select>
 
 		<br>
 
