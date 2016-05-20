@@ -33,6 +33,18 @@ function queryDB() {
     return $return;
 }
 
+function queryAloneDB($id) {
+    $co = connectionDB();
+    $request = "SELECT * FROM reunion WHERE id_reunion = ".$id.";"; //Query for the SQL query
+
+    $resultat = $co->query($request); //All fetchs in the $resultat variable
+    $row = $resultat->fetch();
+
+    $resultat->closeCursor();
+
+    return $row;
+}
+
 function showReunion($var) {
     echo "<td>";
         if ($var == null) {
