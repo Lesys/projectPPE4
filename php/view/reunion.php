@@ -45,6 +45,6 @@
                <input type="submit" value="Supprimer la réunion" name="delete">
           </form>
 
-          <a href="index.php?action=update"><input type="button" value="Modifier la réunion"></input></a>
+          <a href="index.php?action=update&id=<?php echo $_GET['id']; ?>"><input type="button" value="Modifier la réunion"></input></a>
      </div>
 </div><!-- /content -->

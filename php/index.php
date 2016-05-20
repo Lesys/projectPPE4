@@ -19,9 +19,12 @@
 		case "reunion": $reunion = queryAloneDB($_REQUEST['id']);
 			include "view/reunion.php";
 			break;
-		case "create": include "view/create.php";
+		case "create": $salles = takeAllSalle();
+		include "view/create.php";
 			break;
-		case "update": include "view/update.php";
+		case "update": $salles = takeAllSalle();
+			$reunion = queryAloneDB($_REQUEST['id']);
+			include "view/update.php";
 			break;
 	}
 

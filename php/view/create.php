@@ -24,12 +24,17 @@
 		<br>
 
 		<label for="intitulePost">Intitulé : * </label>
-		<input type="text" name="intitulePost" id="intitulePost" required="" maxlength="500" required=""/>
+		<input type="text" name="intitulePost" id="intitulePost" maxlength="500" required=""/>
 
 		<br>
 
 		<label for="sallePost">Salle : * </label>
-		<input type="text" name="sallePost" id="sallePost" required="" maxlength="4" required=""/>
+			<select name="sallePost">
+            	<?php
+                	foreach ($salles as $salle) { ?>
+                    	<option value="<?php echo $salle['id_salle']; ?>"><?php echo $salle['num_salle']; ?></option>
+          		<?php } ?>
+        	</select>
 
 		<br>
 

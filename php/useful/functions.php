@@ -19,7 +19,7 @@ function queryDB() {
     $resultat = $co->query($request); //All fetchs in the $resultat variable
 
     while ($row = $resultat->fetch()) { //For each row in the result of the query
-        $return[$row["id_reunion"] - 1] = array(
+        $return[] = array(
         	"id_reunion"=>$row["id_reunion"],
         	"date_reunion"=>$row["date_reunion"],
             "duree_estimee_reunion"=>$row["duree_estimee_reunion"],
@@ -57,38 +57,22 @@ function showReunion($var) {
 }
 
 function createNewReunion() {
-    echo checkNullOrNot($_POST["datePost"])."<br>";
-    echo checkNullOrNot($_POST["dureePost"].":00")."<br>";
-    echo checkNullOrNot($_POST["intitulePost"])."<br>";
-    echo checkNullOrNot($_POST["descriptifPost"])."<br>";
-    echo checkNullOrNot($_POST["sallePost"])."<br>";
-    $date = checkNullOrNot($_POST["datePost"]);
-    $duree = checkNullOrNot($_POST["dureePost"].":00");
-    $intitule = checkNullOrNot($_POST["intitulePost"]);
-    $descriptif = checkNullOrNot($_POST["descriptifPost"]);
-    $salle = checkNullOrNot($_POST["sallePost"]);
-
     $co = connectionDB();
-    $request = "SELECT id_salle FROM salle WHERE num_salle = ".$salle;
 
-    $resultat = $co->query($request); //All fetchs in the $resultat variable
-
-    if ($resultat === FALSE) {
-        echo "Error: ".$request."<br>".$co->error;
-    }
-
-    $row = $resultat->fetch();
-
-    $resultat->closeCursor();
-
-    $salle = $row['id_salle'];
-    echo $salle;
+    /*echo checkNullOrNot($_POST["datePost"], "char")."<br>";
+    echo checkNullOrNot($_POST["dureePost"].":00", "char")."<br>";
+    echo checkNullOrNot($_POST["intitulePost"], "char")."<br>";
+    echo checkNullOrNot($_POST["descriptifPost"], "char")."<br>";
+    echo checkNullOrNot($_POST["sallePost"], "num")."<br>";*/
+    $date = checkNullOrNot($_POST["datePost"], "char");
+    $duree = checkNullOrNot($_POST["dureePost"].":00", "char");
+    $intitule = checkNullOrNot($_POST["intitulePost"], "char");
+    $descriptif = checkNullOrNot($_POST["descriptifPost"], "char");
+    $salle = checkNullOrNot($_POST["sallePost"], "num");
 
     $request = "INSERT INTO reunion (date_reunion, duree_estimee_reunion, intitule_reunion, descriptif_reunion, salle_reunion) VALUES (".$date.", ".$duree.", ".$intitule.", ".$descriptif.", ".$salle.");";
 
-    $resultat = $co->query($request); //All fetchs in the $resultat variable
-
-    if ($resultat === FALSE) {
+    if ($resultat = $co->query($request) == FALSE) { //All fetchs in the $resultat variable
         echo "Error: ".$request."<br>".$co->error;
     }
 }
@@ -102,34 +86,50 @@ function deleteReunion($id) {
 }
 
 function updateReunion() {
-    //$request = "UPDATE reunion SET "
+    $id = $_GET['id'];
+    $date = checkNullOrNot($_POST["datePost"]);
+    $duree = checkNullOrNot($_POST["dureePost"].":00");
+    $intitule = checkNullOrNot($_POST["intitulePost"]);
+    $descriptif = checkNullOrNot($_POST["descriptifPost"]);
+    $salle = checkNullOrNot($_POST["sallePost"]);
+    $request = "UPDATE reunion SET date_reunion = ".$date.", duree_reunion = ".$duree.", intitule_reunion = ";
 }
 
 function takeAllSalle() {
-    $request = "SELECT * FROM salle;";
+    $request = "SELECT * FROM salle ORDER BY num_salle ASC;";
 
     $co = connectionDB();
+    $return = array();
 
-    if ($co->query($request) === TRUE) {
+    if ($co->query($request) == TRUE) {
         $resultat = $co->query($request); //All fetchs in the $resultat variable
 
         while ($row = $resultat->fetch()) { //For each row in the result of the query
-            $return[$row["id_salle"] - 1] = array(
-                "id_salle"=>$row["id_reunion"],
+            $return[] = array(
+                "id_salle"=>$row["id_salle"],
                 "num_salle"=>$row["num_salle"]);
         }
 
         $resultat->closeCursor();
     }
+    else
+        echo "fail";
 
     return $return;
 }
 
-function checkNullOrNot($var) {
-    if ($var != null)
-        $return = "\"".$var."\"";
+function checkNullOrNot($var, $type) {
+    if ($type == "char") {
+        if ($var != null)
+            $return = "\"".$var."\"";
+        else
+            $return = "null";
+    }
     else
-        $return = "null";
+        if ($var != null)
+            $return = $var;
+        else
+            $return = "null";
 
     return $return;
 }
@@ -144,7 +144,7 @@ function affDateTime() {
     $minute = date('i');
 
     // Affichage date et heure
-    echo '<p class="affDateTime">Bonjour ! Nous sommes le ' . $jour . '/' . $mois . '/' . $annee . ' et il est ' . $heure. ' h ' . $minute.'</p>';
+    echo '<p class="affDateTime">Bonjour! Nous sommes le ' . $jour . '/' . $mois . '/' . $annee . ' et il est ' . $heure. ' h ' . $minute.'</p>';
 
 }
 

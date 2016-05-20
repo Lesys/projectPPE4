@@ -1,17 +1,19 @@
 <?php if (isset($_POST['update'])) {
-     createNewReunion();
+     updateReunion();
      ?>
 
      <script type="text/javascript">
-          alert("La réunion a été ajoutée.");
+          alert("La réunion a été modifié.");
           document.location.href="index.php";
      </script>
 
      <?php }
-     else if (isset($_POST['cancel'])) { ?>
+
+     else if (isset($_POST['cancel'])) { ?>
 
      <script type="text/javascript">
-        document.location.href="index.php";
+          alert("Modification annulée.");
+          document.location.href="index.php";
      </script>
 
      <?php } ?>
@@ -22,27 +24,33 @@
           <p>
 
           <label for="datePost">Date/heure :</label>
-          <input type="datetime" name="datePost" id="datePost" placeholder="jj-MM-aaaa hh:mm:ss" maxlength="19" required="">
+          <input type="datetime" name="datePost" id="datePost" placeholder="jj-MM-aaaa hh:mm:ss" maxlength="19" required="" value="<?php echo $reunion['date_reunion']; ?>"/>
 
           <br>
 
           <label for="dureePost">Durée :</label>
-          <input type="time" name="dureePost" id="dureePost" placeholder="00:00:00" maxlength="5" required="">
+          <input type="time" name="dureePost" id="dureePost" placeholder="00:00:00" maxlength="5" required="" value="<?php echo $reunion['duree_estimee_reunion']; ?>"/>
 
           <br>
 
           <label for="intitulePost">Intitulé :</label>
-          <input type="text" name="intitulePost" id="intitulePost" required="" maxlength="500" required=""/>
+          <input type="text" name="intitulePost" id="intitulePost" required="" maxlength="500" required="" value="<?php echo $reunion['intitule_reunion']; ?>"/>
 
           <br>
 
           <label for="sallePost">Salle :</label>
-          <input type="text" name="sallePost" id="sallePost" required="" maxlength="4" required=""/>
+               <select name="salle">
+               <?php
+                    foreach ($salles as $salle) { ?>
+                         <option value="<?php echo $salle['id_salle']; ?>" <?php if ($reunion['salle_reunion'] == $salle['id_salle']) { ?>
+                              selected="selected" <?php } ?> ><?php echo $salle['num_salle']; ?></option>
+                    <?php } ?>
+          </select>
 
           <br>
 
           <label for="descriptifPost">Descriptif :</label><br>
-          <textarea name="descriptifPost" id="descriptifPost" cols="100" rows="10" maxlength="5000" placeholder="Réunion sur l'amortissement de la chute des cheveux en Amazonie..."></textarea>
+          <textarea name="descriptifPost" id="descriptifPost" cols="100" rows="10" maxlength="5000" placeholder="Réunion sur l'amortissement de la chute des cheveux en Amazonie..." value="<?php echo $reunion['descriptif_reunion']; ?>"></textarea>
 
           <br>
 
