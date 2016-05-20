@@ -98,9 +98,7 @@ function deleteReunion($id) {
 
     $co = connectionDB();
 
-    if ($co->query($request) === FALSE) {
-        echo "Error: ".$request."<br>".$co->error;
-    }
+    return $co->query($request);
 }
 
 function updateReunion() {

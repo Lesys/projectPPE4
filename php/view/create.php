@@ -3,8 +3,8 @@
 	?>
 
 	<script type="text/javascript">
-   		alert("La réunion a été ajoutée.")
-        document.location.href="index.php"
+   		alert("La réunion a été ajoutée.");
+        document.location.href="index.php";
    	</script>
    	<?php } ?>
 
@@ -45,7 +45,7 @@
 		<br><br>
 	    * : Champs obligatoires
 
-   </p>
- </fieldset>
+   	</p>
+ 	</fieldset>
 
 </form>
