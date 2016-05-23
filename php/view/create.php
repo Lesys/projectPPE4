@@ -14,7 +14,7 @@
 	   	<p>
 
 		<label for="datePost">Date/heure : * </label>
-		<input type="datetime" name="datePost" id="datePost" placeholder="jj-MM-aaaa hh:mm:ss" maxlength="19" required="">
+		<input type="datetime" name="datePost" id="datePost" placeholder="aaaa-MM-jj hh:mm:ss" maxlength="19" required="">
 
 		<br>
 
