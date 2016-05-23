@@ -3,13 +3,21 @@ function connectionDB() {
     $PARAMHost = '172.16.99.3'; //Server path
     $PARAMPort = '3306'; //Server port
     $PARAMDBName = 'examen.bidault-widmer'; //DataBase name
-    $PARAMUser = 'b.bidault'; //User login
-    $PARAMPassword = 'passe123'; //User Password
+    $PARAMUser = 'a.widmer'; //User login
+    $PARAMPassword = 'passe'; //User Password
 
     $connection = new PDO('mysql:host='.$PARAMHost.';port='.$PARAMPort.';dbname='.$PARAMDBName, $PARAMUser, $PARAMPassword,
         array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 
-    return $connection;
+    if ($connection) //If we are in Malraux
+        return $connection;
+    else //If we are out Malraux
+    {
+        $PARAMHost = "bts.bts-malraux72.net:6380";
+        $connection = new PDO('mysql:host='.$PARAMHost.';port='.$PARAMPort.';dbname='.$PARAMDBName, $PARAMUser, $PARAMPassword,
+            array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+        return $connection;
+    }
 }
 
 function queryDB() {
