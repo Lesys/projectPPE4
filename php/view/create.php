@@ -24,7 +24,7 @@
 		<br>
 
 		<label for="intitulePost">Intitulé : * </label>
-		<input type="text" name="intitulePost" id="intitulePost" maxlength="500" required=""/>
+		<input type="text" name="intitulePost" placeholder="Intitule" id="intitulePost" maxlength="500" required=""/>
 
 		<br>
 

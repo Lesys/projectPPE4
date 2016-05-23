@@ -24,17 +24,17 @@
           <p>
 
           <label for="datePost">Date/heure :</label>
-          <input type="datetime" name="datePost" id="datePost" placeholder="jj-MM-aaaa hh:mm:ss" maxlength="19" required="" value="<?php echo $reunion['date_reunion']; ?>"/>
+          <input type="datetime" name="datePost" id="datePost" placeholder="aaaa-MM-jj hh:mm:ss" maxlength="19" required="" value="<?php echo $reunion['date_reunion']; ?>"/>
 
           <br>
 
           <label for="dureePost">Durée :</label>
-          <input type="time" name="dureePost" id="dureePost" placeholder="00:00:00" maxlength="5" required="" value="<?php echo $reunion['duree_estimee_reunion']; ?>"/>
+          <input type="time" name="dureePost" id="dureePost" placeholder="hh:mm:ss" maxlength="5" required="" value="<?php echo $reunion['duree_estimee_reunion']; ?>"/>
 
           <br>
 
           <label for="intitulePost">Intitulé :</label>
-          <input type="text" name="intitulePost" id="intitulePost" required="" maxlength="500" required="" value="<?php echo $reunion['intitule_reunion']; ?>"/>
+          <input type="text" name="intitulePost" placeholder="Intitule" id="intitulePost" required="" maxlength="500" required="" value="<?php echo $reunion['intitule_reunion']; ?>"/>
 
           <br>
 
